@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
  반갑습니다. Napster의 블로그입니다.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://comets195.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: LeeDongJin
+github_username: comets195@gmail.com
 
 # Build settings
 markdown: kramdown
