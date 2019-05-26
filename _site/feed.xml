@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-04T19:04:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Swift Napster</title><subtitle>반갑습니다. Napster의 블로그입니다.</subtitle><entry><title type="html">Hello Swift World!</title><link href="http://localhost:4000/article/2019/03/04/Hello-Swift.html" rel="alternate" type="text/html" title="Hello Swift World!" /><published>2019-03-04T00:00:00+09:00</published><updated>2019-03-04T00:00:00+09:00</updated><id>http://localhost:4000/article/2019/03/04/Hello%20Swift</id><content type="html" xml:base="http://localhost:4000/article/2019/03/04/Hello-Swift.html">&lt;h1 id=&quot;hello-swift-world&quot;&gt;Hello Swift World!&lt;/h1&gt;
+
+&lt;p&gt;안녕하세요?
+첫번째 포스팅입니다. 앞으로 블로그를 어떻게 운영하면 좋을지에 대한 간략한 소개들 정도 되겠네요. 저는 iOS개발자 입니다. 아직 한참 배울께 많죠. 그래서 아는 것도 다시한번 정리해보는 시간을 갖는 것과 잘못 알고 있는 것을 피드백을 통해 고치려고합니다. 알게된 것들은 구글 검색을 통해 알게되는 것도 있겠지만 공식문서를 기반으로 알아가보려합니다.&lt;/p&gt;
+
+&lt;p&gt;매주 혹은 2주마다 하나씩 큰 주제를 정하고 그에 맞는 공식문서의 내용과 내가 생각한게 맞는지를 검증하는 코드와 함께 포스팅을 할 예정입니다.&lt;/p&gt;
+
+&lt;p&gt;꾸준히 블로그를 할 수 있길 바라며 이글을 시작으로 블로그를 시작해보려합니다.&lt;/p&gt;
+
+&lt;p&gt;감사합니다.&lt;/p&gt;
+
+&lt;p&gt;Napster.&lt;/p&gt;</content><author><name></name></author><category term="article" /><category term="blog" /><summary type="html">Hello Swift World!</summary></entry></feed>
