@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Napster"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "assets/images/author.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "하루하루 흔적을 남기자."
   location         : "Korea"
   email            :
