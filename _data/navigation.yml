@@ -1,8 +1,14 @@
 # main links
 main:
-  - title: "do someting..."
+  - title: "Categories"
   # url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
+    url:  /categories/
+  # - title: "iOS"
+    # url: /categories/iOS/
+
+
+
+    
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
   #   url: /year-archive/
