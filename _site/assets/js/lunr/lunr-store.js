@@ -1,6 +1,6 @@
 var store = [{
         "title": "[Raywenderlich] Concurrency 1: 소개",
-        "excerpt":"Concurrency란 무엇인가? 회사의 프로젝트를 진행하면서 iOS의 동시성 프로그래밍의 개념 공부가 필요해졌었다. 필요로 했던 기능은 이미지 업로드 서버 요청과 동시에 UI에 업로드 중이라는 변화를 보여줘야하는 기능이었다. 가장 기본적인 내용인 UI는 꼭 Main Threed에서 실행해야한다. 정도만 알고 있었고, 어떻게 다른 Threed에게 일을 시키면 되는지 알고 싶어 공부하게 되었다. 책에서는 Concurrency, 동시성을 간단하게...","categories": ["Concurrency"],
+        "excerpt":"Concurrency란 무엇인가? 회사의 프로젝트를 진행하면서 iOS의 동시성 프로그래밍의 개념 공부가 필요해졌었다. 필요로 했던 기능은 이미지 업로드 서버 요청과 동시에 UI에 업로드 중이라는 변화를 보여줘야하는 기능이었다. 가장 기본적인 내용인 UI는 꼭 Main Thread에서 실행해야한다 정도만 알고 있었고, 어떻게 다른 Thread에게 일을 시키면 되는지 알고 싶어 공부하게 되었다. 책에서는 Concurrency, 동시성을 간단하게...","categories": ["Concurrency"],
         "tags": [],
         "url": "http://localhost:4000/concurrency/Concurrency1/",
         "teaser": "http://localhost:4000/assets/images/logo.jpg"
