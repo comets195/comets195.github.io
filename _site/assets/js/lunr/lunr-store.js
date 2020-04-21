@@ -10,4 +10,10 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/%EC%8B%9C%EC%9E%91/Hello-Swift/",
         "teaser": "http://localhost:4000/assets/images/logo.jpg"
+      },{
+        "title": "JK가 보내주신 개발자의 단계",
+        "excerpt":"나의 위치를 가늠해 볼 수 있는 약간의 시야 소프트웨어 개발 업계에 20년정도 있으면서 면접도 수백번 보고 여러 종류의 회사(단순 SW 하청 계약직부터 글로벌 SW기업까지)를 거치다보니 소프트웨어 엔지니어를 보는 개인적인 최소한의 룰(?)이 생긴것이 있는데, 이를 공유해볼까 합니다. 승진에 대한 피드백을 주다보니 자연스럽게 정리가 되더라고요. 매니지먼트 트랙이 아닌 개인 공헌자(IC)의 레벨에 대한...","categories": ["내생각"],
+        "tags": [],
+        "url": "http://localhost:4000/%EB%82%B4%EC%83%9D%EA%B0%81/myopinion/",
+        "teaser": "http://localhost:4000/assets/images/logo.jpg"
       }]
