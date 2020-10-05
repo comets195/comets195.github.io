@@ -16,4 +16,10 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/%EB%82%B4%EC%83%9D%EA%B0%81/myopinion/",
         "teaser": "http://localhost:4000/assets/images/logo.jpg"
+      },{
+        "title": "[iOS] Layer란?",
+        "excerpt":"CALayer의 개념을 알아보자! Layer iOS에서의 모든 뷰는 Layer를 가지고있다. Layer는 UIView에 대한 bitmap정보를 포함하고있다. 이 정보들을 GPU에게 제공하여 그래픽처리의 이점을 가져온다. (OpenGL을 이용한 부드러운 화면처리) OpenGL을 직접적으로 다루기엔 너무 비효율적이다. 작은 일에도 많은양의 코드가 필요한 것도 하나의 이유이다. 이러한 불편점을 도움을 주기위해 Core Graphics는 만들어 졌고, 이걸 좀더 쉽게 사용하기위해...","categories": ["UI"],
+        "tags": [],
+        "url": "http://localhost:4000/ui/CALayer/",
+        "teaser": "http://localhost:4000/assets/images/logo.jpg"
       }]

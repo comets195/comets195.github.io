@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-21T10:43:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’iOS</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">JK가 보내주신 개발자의 단계</title><link href="http://localhost:4000/%EB%82%B4%EC%83%9D%EA%B0%81/myopinion/" rel="alternate" type="text/html" title="JK가 보내주신 개발자의 단계" /><published>2020-04-21T00:00:00+09:00</published><updated>2020-04-21T00:00:00+09:00</updated><id>http://localhost:4000/%EB%82%B4%EC%83%9D%EA%B0%81/myopinion</id><content type="html" xml:base="http://localhost:4000/%EB%82%B4%EC%83%9D%EA%B0%81/myopinion/">&lt;h1 id=&quot;나의-위치를-가늠해-볼-수-있는-약간의-시야&quot;&gt;나의 위치를 가늠해 볼 수 있는 약간의 시야&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-05T11:34:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’iOS</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">[iOS] Layer란?</title><link href="http://localhost:4000/ui/CALayer/" rel="alternate" type="text/html" title="[iOS] Layer란?" /><published>2020-10-05T00:00:00+09:00</published><updated>2020-10-05T00:00:00+09:00</updated><id>http://localhost:4000/ui/CALayer</id><content type="html" xml:base="http://localhost:4000/ui/CALayer/">&lt;h1 id=&quot;calayer의-개념을-알아보자&quot;&gt;CALayer의 개념을 알아보자!&lt;/h1&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;layer&quot;&gt;Layer&lt;/h1&gt;
+
+&lt;p&gt;iOS에서의 모든 뷰는 Layer를 가지고있다. Layer는  UIView에 대한 bitmap정보를 포함하고있다. 이 정보들을 GPU에게 제공하여 그래픽처리의 이점을 가져온다. (OpenGL을 이용한 부드러운 화면처리) OpenGL을 직접적으로 다루기엔 너무 비효율적이다. 작은 일에도 많은양의 코드가 필요한 것도 하나의 이유이다. 이러한 불편점을 도움을 주기위해 Core Graphics는 만들어 졌고, 이걸 좀더 쉽게 사용하기위해 Core Animation이 만들어졌다. 이친구는 &lt;code class=&quot;highlighter-rouge&quot;&gt;CALayer &lt;/code&gt; 클래스를 제공해주고 기초단계의 낮은 수준의 그래픽 처리에 접근할 수 있게 해준다. 쉽게말해서 복잡한 OpenGL코드를 몇개의 개념을 모아서 좀더 쉽게 해주는 친구가 &lt;code class=&quot;highlighter-rouge&quot;&gt;CALayer&lt;/code&gt;라는 뜻이다. (이렇게 쉽게 해준것도 잘 못쓰고있으니 참..)&lt;/p&gt;
+
+&lt;p&gt;애플은또 Core Animation의 많은 기능들을 대부분의 앱에서 꼭 필요하지 안게 하기위해 UIKit이란걸 또 만들어주었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.appcoda.com/wp-content/uploads/2016/08/calayer-intro-1024x655.png&quot; alt=&quot;애플에서 그려준 iOS drawing hierarchy&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이런 다양한 층을둔 것에 이점은, 프로그래머 마음대로 좀더 낮은 수준(성능을 주로 원하는 작업들, 유연한 커스텀뷰 작업)에 접근하는 코드를 작성할 수도 있고, 아닐 수도 있게 선택지를 준다는 점이다. UIView의 Layer에 여러가지 옵션들을 주고 그릴 수 있는게 주르르륵 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;calayer-performance&quot;&gt;CALayer Performance&lt;/h2&gt;
+
+&lt;p&gt;그럼 Layer를 이용한 성능향상 팁을 두가지 알아보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;drawsAsynchronously&lt;/code&gt; 이걸 true로 하면 CPU가 개입하여 백그라운드 스레드에서 그리는작업을 하게된다. 이건 redrawn이 빈번할때 예를들면 지도, 테이블뷰 라는데, 애플 공식문서에서는 해당 속성을 변경할때는 바꿔서 사용했을때 이점이 있는지 잘생각하고 사용하라고 한다. 기본값은 false이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;shouldRasterize&lt;/code&gt; Rasterized(픽셀로 바꾸어 화면상으로 보여줌) 이게 true이면 Layer는 한번만 그려진다. 그리고 언제든 animated될때 다시그려지지 않고, 처음 설정할때 그려진 bitmap정보도 바뀌지 않는다. 그말은 애니메이션이되는 layer가아니라 가만히 있는 layer에 설정해주면 성능향상에 좋다는 것.&lt;/p&gt;
+
+&lt;h3 id=&quot;reference&quot;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.raywenderlich.com/10317653-calayer-tutorial-for-ios-getting-started&quot;&gt;Raywender 참고&lt;/a&gt;
+&lt;a href=&quot;https://www.appcoda.com/calayer-introduction/&quot;&gt;appcoda blog 참고&lt;/a&gt;&lt;/p&gt;</content><author><name>Napster</name></author><summary type="html">CALayer의 개념을 알아보자!</summary></entry><entry><title type="html">JK가 보내주신 개발자의 단계</title><link href="http://localhost:4000/%EB%82%B4%EC%83%9D%EA%B0%81/myopinion/" rel="alternate" type="text/html" title="JK가 보내주신 개발자의 단계" /><published>2020-04-21T00:00:00+09:00</published><updated>2020-04-21T00:00:00+09:00</updated><id>http://localhost:4000/%EB%82%B4%EC%83%9D%EA%B0%81/myopinion</id><content type="html" xml:base="http://localhost:4000/%EB%82%B4%EC%83%9D%EA%B0%81/myopinion/">&lt;h1 id=&quot;나의-위치를-가늠해-볼-수-있는-약간의-시야&quot;&gt;나의 위치를 가늠해 볼 수 있는 약간의 시야&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;소프트웨어 개발 업계에 20년정도 있으면서 면접도 수백번 보고 여러 종류의 회사(단순 SW 하청 계약직부터 글로벌 SW기업까지)를 거치다보니 소프트웨어 엔지니어를 보는 개인적인 최소한의 룰(?)이 생긴것이 있는데, 이를 공유해볼까 합니다. 승진에 대한 피드백을 주다보니 자연스럽게 정리가 되더라고요. 매니지먼트 트랙이 아닌 개인 공헌자(IC)의 레벨에 대한 이야기이고 물론 개인적인 견해입니다.&lt;br /&gt;

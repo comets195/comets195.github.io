@@ -1,0 +1,26 @@
+I"�<h1 id="calayer의-개념을-알아보자">CALayer의 개념을 알아보자!</h1>
+<hr />
+
+<h1 id="layer">Layer</h1>
+
+<p>iOS에서의 모든 뷰는 Layer를 가지고있다. Layer는  UIView에 대한 bitmap정보를 포함하고있다. 이 정보들을 GPU에게 제공하여 그래픽처리의 이점을 가져온다. (OpenGL을 이용한 부드러운 화면처리) OpenGL을 직접적으로 다루기엔 너무 비효율적이다. 작은 일에도 많은양의 코드가 필요한 것도 하나의 이유이다. 이러한 불편점을 도움을 주기위해 Core Graphics는 만들어 졌고, 이걸 좀더 쉽게 사용하기위해 Core Animation이 만들어졌다. 이친구는 <code class="highlighter-rouge">CALayer </code> 클래스를 제공해주고 기초단계의 낮은 수준의 그래픽 처리에 접근할 수 있게 해준다. 쉽게말해서 복잡한 OpenGL코드를 몇개의 개념을 모아서 좀더 쉽게 해주는 친구가 <code class="highlighter-rouge">CALayer</code>라는 뜻이다. (이렇게 쉽게 해준것도 잘 못쓰고있으니 참..)</p>
+
+<p>애플은또 Core Animation의 많은 기능들을 대부분의 앱에서 꼭 필요하지 안게 하기위해 UIKit이란걸 또 만들어주었다.</p>
+
+<p><img src="http://www.appcoda.com/wp-content/uploads/2016/08/calayer-intro-1024x655.png" alt="애플에서 그려준 iOS drawing hierarchy" style="zoom:50%;" /></p>
+
+<p>이런 다양한 층을둔 것에 이점은, 프로그래머 마음대로 좀더 낮은 수준(성능을 주로 원하는 작업들, 유연한 커스텀뷰 작업)에 접근하는 코드를 작성할 수도 있고, 아닐 수도 있게 선택지를 준다는 점이다. UIView의 Layer에 여러가지 옵션들을 주고 그릴 수 있는게 주르르륵 있다.</p>
+
+<h2 id="calayer-performance">CALayer Performance</h2>
+
+<p>그럼 Layer를 이용한 성능향상 팁을 두가지 알아보자.</p>
+
+<p><code class="highlighter-rouge">drawsAsynchronously</code> 이걸 true로 하면 CPU가 개입하여 백그라운드 스레드에서 그리는작업을 하게된다. 이건 redrawn이 빈번할때 예를들면 지도, 테이블뷰 라는데, 애플 공식문서에서는 해당 속성을 변경할때는 바꿔서 사용했을때 이점이 있는지 잘생각하고 사용하라고 한다. 기본값은 false이다.</p>
+
+<p><code class="highlighter-rouge">shouldRasterize</code> Rasterized(픽셀로 바꾸어 화면상으로 보여줌) 이게 true이면 Layer는 한번만 그려진다. 그리고 언제든 animated될때 다시그려지지 않고, 처음 설정할때 그려진 bitmap정보도 바뀌지 않는다. 그말은 애니메이션이되는 layer가아니라 가만히 있는 layer에 설정해주면 성능향상에 좋다는 것.</p>
+
+<h3 id="reference">Reference</h3>
+<p><a href="https://www.raywenderlich.com/10317653-calayer-tutorial-for-ios-getting-started">Raywender 참고</a>
+<a href="https://www.appcoda.com/calayer-introduction/">appcoda blog 참고</a></p>
+
+:ET
