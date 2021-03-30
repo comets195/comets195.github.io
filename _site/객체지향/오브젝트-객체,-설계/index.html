@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[iOS] Layer란? - Napster’iOS</title>
-<meta name="description" content="CALayer의 개념을 알아보자!   ">
+<!-- begin _includes/seo.html --><title>[오브젝트] 1. 객체, 설계 - Napster’iOS</title>
+<meta name="description" content="객체, 설계 ">
 
 
   <meta name="author" content="Napster">
@@ -19,30 +19,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Napster'iOS">
-<meta property="og:title" content="[iOS] Layer란?">
-<meta property="og:url" content="http://localhost:4000/ui/CALayer/">
+<meta property="og:title" content="[오브젝트] 1. 객체, 설계">
+<meta property="og:url" content="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/">
 
 
-  <meta property="og:description" content="CALayer의 개념을 알아보자!   ">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2020-10-05T00:00:00+09:00">
+  <meta property="og:description" content="객체, 설계 ">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-03-30T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/ui/CALayer/">
+
+<link rel="canonical" href="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/">
 
 
 
@@ -268,15 +268,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[iOS] Layer란?">
-    <meta itemprop="description" content="CALayer의 개념을 알아보자!">
-    <meta itemprop="datePublished" content="2020-10-05T00:00:00+09:00">
+    <meta itemprop="headline" content="[오브젝트] 1. 객체, 설계">
+    <meta itemprop="description" content="객체, 설계">
+    <meta itemprop="datePublished" content="2021-03-30T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[iOS] Layer란?
+          <h1 id="page-title" class="page__title" itemprop="headline">[오브젝트] 1. 객체, 설계
 </h1>
           <!-- 
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -284,42 +284,37 @@
 
 
 
-  1 분 소요
+  최대 1 분 소요
 
 </p>
            -->
-          <p class="page__date"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트: <time datetime="2020-10-05T00:00:00+09:00">October 05, 2020</time></p>
+          <p class="page__date"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트: <time datetime="2021-03-30T00:00:00+09:00">March 30, 2021</time></p>
 
         </header>
       
 
       <section class="page__content" itemprop="text">
         
-        <h1 id="calayer의-개념을-알아보자">CALayer의 개념을 알아보자!</h1>
-<hr />
+        <h1 id="객체-설계">객체, 설계</h1>
 
-<h1 id="layer">Layer</h1>
+<p>“이론이 먼저일까, 실무가 먼저일까?”
+소프트웨어의 분야는 오랜 역사가 깊지 않기 때문에 이론보다 실무가 먼저이다. 실무가 성숙해지는 시점에 이론이 실무를 추월하는게 보통 정설이다.
+객체지향설계의 실무적인 접근을 통해 이론을 배우자.</p>
 
-<p>iOS에서의 모든 뷰는 Layer를 가지고있다. Layer는  UIView에 대한 bitmap정보를 포함하고있다. 이 정보들을 GPU에게 제공하여 그래픽처리의 이점을 가져온다. (OpenGL을 이용한 부드러운 화면처리) OpenGL을 직접적으로 다루기엔 너무 비효율적이다. 작은 일에도 많은양의 코드가 필요한 것도 하나의 이유이다. 이러한 불편점을 도움을 주기위해 Core Graphics는 만들어 졌고, 이걸 좀더 쉽게 사용하기위해 Core Animation이 만들어졌다. 이친구는 <code class="highlighter-rouge">CALayer </code> 클래스를 제공해주고 기초단계의 낮은 수준의 그래픽 처리에 접근할 수 있게 해준다. 쉽게말해서 복잡한 OpenGL코드를 몇개의 개념을 모아서 좀더 쉽게 해주는 친구가 <code class="highlighter-rouge">CALayer</code>라는 뜻이다. (이렇게 쉽게 해준것도 잘 못쓰고있으니 참..)</p>
+<p>클래스간 <strong>의존성(dependency)</strong>이 높으면 <strong>결합도(coupling)</strong>가 높고 결합도가 높으면, 변화에 취약하다.
+클래스를 <strong>캡슐화(encapsulation)</strong>를 해야한다. 캡슐화는 개념적으로나 물리적으로 객체 내부의 세부적인 사항을 감추는 것을 말한다. 캡슐화를 하면서 자율적인 존재로 만드는 것!</p>
 
-<p>애플은또 Core Animation의 많은 기능들을 대부분의 앱에서 꼭 필요하지 안게 하기위해 UIKit이란걸 또 만들어주었다.</p>
+<p>밀접하게 연관된 작업만을 수행하고 연관성이 없는건 다른 객체에게 위임하는 객체를 <strong>응집도(cohesion)</strong> 가 높다고 한다.
+계속되는 응집도를 높이는 과정에 의도치 않은 의존성이 생기게된다. → 모든걸 만족하는 설계는 없다. 설계는 균형을 적절하게 지켜야한다. 훌륭한 설계는 적절한 트레이드오프의 결과물이다!</p>
 
-<p><img src="http://www.appcoda.com/wp-content/uploads/2016/08/calayer-intro-1024x655.png" alt="애플에서 그려준 iOS drawing hierarchy" style="zoom:50%;" /></p>
+<ul>
+  <li>틀린점이나 이상한점이 있다면 제보 감사합니다. :)</li>
+</ul>
 
-<p>이런 다양한 층을둔 것에 이점은, 프로그래머 마음대로 좀더 낮은 수준(성능을 주로 원하는 작업들, 유연한 커스텀뷰 작업)에 접근하는 코드를 작성할 수도 있고, 아닐 수도 있게 선택지를 준다는 점이다. UIView의 Layer에 여러가지 옵션들을 주고 그릴 수 있는게 주르르륵 있다.</p>
-
-<h2 id="calayer-performance">CALayer Performance</h2>
-
-<p>그럼 Layer를 이용한 성능향상 팁을 두가지 알아보자.</p>
-
-<p><code class="highlighter-rouge">drawsAsynchronously</code> 이걸 true로 하면 CPU가 개입하여 백그라운드 스레드에서 그리는작업을 하게된다. 이건 redrawn이 빈번할때 예를들면 지도, 테이블뷰 라는데, 애플 공식문서에서는 해당 속성을 변경할때는 바꿔서 사용했을때 이점이 있는지 잘생각하고 사용하라고 한다. 기본값은 false이다.</p>
-
-<p><code class="highlighter-rouge">shouldRasterize</code> Rasterized(픽셀로 바꾸어 화면상으로 보여줌) 이게 true이면 Layer는 한번만 그려진다. 그리고 언제든 animated될때 다시그려지지 않고, 처음 설정할때 그려진 bitmap정보도 바뀌지 않는다. 그말은 애니메이션이되는 layer가아니라 가만히 있는 layer에 설정해주면 성능향상에 좋다는 것.</p>
-
-<h3 id="reference">Reference</h3>
-<p><a href="https://www.raywenderlich.com/10317653-calayer-tutorial-for-ios-getting-started">Raywender 참고</a>
-<a href="https://www.appcoda.com/calayer-introduction/">appcoda blog 참고</a></p>
-
+<h2 id="참고">참고</h2>
+<ul>
+  <li>모든 그림과 내용은 오브젝트: 코드로 이해하는 객체지향 설계 - 조영호 님의 책에서 나온 내용입니다.</li>
+</ul>
 
         
       </section>
@@ -327,6 +322,29 @@
       <footer class="page__meta">
         
         
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EA%B0%9D%EC%B2%B4" class="page__taxonomy-item" rel="tag">객체</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EC%84%A4%EA%B3%84" class="page__taxonomy-item" rel="tag">설계</a>
+    
+    </span>
+  </p>
+
+
 
 
   
@@ -342,14 +360,14 @@
     
       
       
-      <a href="/categories/#ui" class="page__taxonomy-item" rel="tag">UI</a>
+      <a href="/categories/#%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5" class="page__taxonomy-item" rel="tag">객체지향</a>
     
     </span>
   </p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-10-05T00:00:00+09:00">October 5, 2020</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-30T00:00:00+09:00">March 30, 2021</time></p>
         
       </footer>
 
@@ -358,23 +376,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BiOS%5D+Layer%EB%9E%80%3F%20http%3A%2F%2Flocalhost%3A4000%2Fui%2FCALayer%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%5D+1.+%EA%B0%9D%EC%B2%B4%2C+%EC%84%A4%EA%B3%84%20http%3A%2F%2Flocalhost%3A4000%2F%25EA%25B0%259D%25EC%25B2%25B4%25EC%25A7%2580%25ED%2596%25A5%2F%25EC%2598%25A4%25EB%25B8%258C%25EC%25A0%259D%25ED%258A%25B8-%25EA%25B0%259D%25EC%25B2%25B4%2C-%25EC%2584%25A4%25EA%25B3%2584%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fui%2FCALayer%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25EA%25B0%259D%25EC%25B2%25B4%25EC%25A7%2580%25ED%2596%25A5%2F%25EC%2598%25A4%25EB%25B8%258C%25EC%25A0%259D%25ED%258A%25B8-%25EA%25B0%259D%25EC%25B2%25B4%2C-%25EC%2584%25A4%25EA%25B3%2584%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fui%2FCALayer%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25EA%25B0%259D%25EC%25B2%25B4%25EC%25A7%2580%25ED%2596%25A5%2F%25EC%2598%25A4%25EB%25B8%258C%25EC%25A0%259D%25ED%258A%25B8-%25EA%25B0%259D%25EC%25B2%25B4%2C-%25EC%2584%25A4%25EA%25B3%2584%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/%EB%82%B4%EC%83%9D%EA%B0%81/myopinion/" class="pagination--pager" title="JK가 보내주신 개발자의 단계
+      <a href="/ui/CALayer/" class="pagination--pager" title="[iOS] Layer란?
 ">이전</a>
     
     
-      <a href="/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/" class="pagination--pager" title="[오브젝트] 1. 객체, 설계
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -402,7 +419,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/" rel="permalink">[오브젝트] 1. 객체, 설계
+        <a href="/ui/CALayer/" rel="permalink">[iOS] Layer란?
 </a>
       
     </h2>
@@ -412,16 +429,18 @@
 
 
 
-  최대 1 분 소요
+  1 분 소요
 
 </p>
      -->
 
     
-    <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 30 2021</p>
+    <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> October 05 2020</p>
     
 
-    <p class="archive__item-excerpt" itemprop="description">객체, 설계
+    <p class="archive__item-excerpt" itemprop="description">CALayer의 개념을 알아보자!
+
+
 </p>
   </article>
 </div>

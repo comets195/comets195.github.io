@@ -22,4 +22,10 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/ui/CALayer/",
         "teaser": "http://localhost:4000/assets/images/logo.jpg"
+      },{
+        "title": "[오브젝트] 1. 객체, 설계",
+        "excerpt":"객체, 설계 “이론이 먼저일까, 실무가 먼저일까?” 소프트웨어의 분야는 오랜 역사가 깊지 않기 때문에 이론보다 실무가 먼저이다. 실무가 성숙해지는 시점에 이론이 실무를 추월하는게 보통 정설이다. 객체지향설계의 실무적인 접근을 통해 이론을 배우자. 클래스간 의존성(dependency)이 높으면 결합도(coupling)가 높고 결합도가 높으면, 변화에 취약하다. 클래스를 캡슐화(encapsulation)를 해야한다. 캡슐화는 개념적으로나 물리적으로 객체 내부의 세부적인 사항을 감추는...","categories": ["객체지향"],
+        "tags": ["객체","설계"],
+        "url": "http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/",
+        "teaser": "http://localhost:4000/assets/images/logo.jpg"
       }]

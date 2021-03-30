@@ -17,6 +17,10 @@
 <lastmod>2020-10-05T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/</loc>
+<lastmod>2021-03-30T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -27,5 +31,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/</loc>
 </url>
 </urlset>

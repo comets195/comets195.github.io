@@ -5,8 +5,8 @@ main:
     url:  /categories/
   # - title: "iOS"
     # url: /categories/iOS/
-
-
+  - title: "Tags"
+    url: /tags/
 
     
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
@@ -16,3 +16,4 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+

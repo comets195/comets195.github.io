@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-05T11:34:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’iOS</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">[iOS] Layer란?</title><link href="http://localhost:4000/ui/CALayer/" rel="alternate" type="text/html" title="[iOS] Layer란?" /><published>2020-10-05T00:00:00+09:00</published><updated>2020-10-05T00:00:00+09:00</updated><id>http://localhost:4000/ui/CALayer</id><content type="html" xml:base="http://localhost:4000/ui/CALayer/">&lt;h1 id=&quot;calayer의-개념을-알아보자&quot;&gt;CALayer의 개념을 알아보자!&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-30T17:37:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’iOS</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">[오브젝트] 1. 객체, 설계</title><link href="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/" rel="alternate" type="text/html" title="[오브젝트] 1. 객체, 설계" /><published>2021-03-30T00:00:00+09:00</published><updated>2021-03-30T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,%20%EC%84%A4%EA%B3%84</id><content type="html" xml:base="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/">&lt;h1 id=&quot;객체-설계&quot;&gt;객체, 설계&lt;/h1&gt;
+
+&lt;p&gt;“이론이 먼저일까, 실무가 먼저일까?”
+소프트웨어의 분야는 오랜 역사가 깊지 않기 때문에 이론보다 실무가 먼저이다. 실무가 성숙해지는 시점에 이론이 실무를 추월하는게 보통 정설이다.
+객체지향설계의 실무적인 접근을 통해 이론을 배우자.&lt;/p&gt;
+
+&lt;p&gt;클래스간 &lt;strong&gt;의존성(dependency)&lt;/strong&gt;이 높으면 &lt;strong&gt;결합도(coupling)&lt;/strong&gt;가 높고 결합도가 높으면, 변화에 취약하다.
+클래스를 &lt;strong&gt;캡슐화(encapsulation)&lt;/strong&gt;를 해야한다. 캡슐화는 개념적으로나 물리적으로 객체 내부의 세부적인 사항을 감추는 것을 말한다. 캡슐화를 하면서 자율적인 존재로 만드는 것!&lt;/p&gt;
+
+&lt;p&gt;밀접하게 연관된 작업만을 수행하고 연관성이 없는건 다른 객체에게 위임하는 객체를 &lt;strong&gt;응집도(cohesion)&lt;/strong&gt; 가 높다고 한다.
+계속되는 응집도를 높이는 과정에 의도치 않은 의존성이 생기게된다. → 모든걸 만족하는 설계는 없다. 설계는 균형을 적절하게 지켜야한다. 훌륭한 설계는 적절한 트레이드오프의 결과물이다!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;틀린점이나 이상한점이 있다면 제보 감사합니다. :)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;모든 그림과 내용은 오브젝트: 코드로 이해하는 객체지향 설계 - 조영호 님의 책에서 나온 내용입니다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Napster</name></author><category term="객체" /><category term="설계" /><summary type="html">객체, 설계</summary></entry><entry><title type="html">[iOS] Layer란?</title><link href="http://localhost:4000/ui/CALayer/" rel="alternate" type="text/html" title="[iOS] Layer란?" /><published>2020-10-05T00:00:00+09:00</published><updated>2020-10-05T00:00:00+09:00</updated><id>http://localhost:4000/ui/CALayer</id><content type="html" xml:base="http://localhost:4000/ui/CALayer/">&lt;h1 id=&quot;calayer의-개념을-알아보자&quot;&gt;CALayer의 개념을 알아보자!&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;layer&quot;&gt;Layer&lt;/h1&gt;
