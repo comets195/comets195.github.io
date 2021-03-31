@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-30T17:37:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’iOS</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">[오브젝트] 1. 객체, 설계</title><link href="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/" rel="alternate" type="text/html" title="[오브젝트] 1. 객체, 설계" /><published>2021-03-30T00:00:00+09:00</published><updated>2021-03-30T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,%20%EC%84%A4%EA%B3%84</id><content type="html" xml:base="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/">&lt;h1 id=&quot;객체-설계&quot;&gt;객체, 설계&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-31T16:18:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’iOS</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">[오브젝트] 2. 객체지향프로그래밍</title><link href="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" rel="alternate" type="text/html" title="[오브젝트] 2. 객체지향프로그래밍" /><published>2021-03-31T00:00:00+09:00</published><updated>2021-03-31T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D</id><content type="html" xml:base="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">&lt;h1 id=&quot;객체지향-프로그래밍&quot;&gt;객체지향 프로그래밍&lt;/h1&gt;
+
+&lt;p&gt;객체지향 패러다임 → 클래스가 아닌 객체에 초점을 맞춰야한다.&lt;/p&gt;
+
+&lt;p&gt;객체…에 집중해야한다. 어떤 객체들이 어떤 상태와 행동을 가지는지 결정한다. 객체는 독립적인 존재가 아니라 기능을 구현하기 위해 협력하는 공동체의 일원이다.&lt;/p&gt;
+
+&lt;p&gt;객체들의 모양과 윤곽이 잡히면, 공통된 특성과 상태를 가진 객체들을 타입으로 분류하고 이 타입을 기반으로 클래스를 구현하자.&lt;/p&gt;
+
+&lt;h3 id=&quot;자율적인-객체&quot;&gt;자율적인 객체&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;객체는 상태와 행동을 함께 가지는 복합적인 존재.&lt;/li&gt;
+  &lt;li&gt;객체는 스스로 판단하고 행동하는 자율적인 존재.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;데이터와 기능을 객체 내부로 묶는 것을 캡슐화. 대부분의 객체지향 프로그래밍 언어는 이러한 캡슐화된 객체에 외부의 접근을 통제할 수 있는 접근 제어(access control)이 있다.&lt;/p&gt;
+
+&lt;p&gt;← 이렇게 하는 이유는 객체가 스스로 자율화되었기 때문이다. 외부의 간섭을 최소화하고 객체 스스로가 판단하고 처리할 수 있도록.&lt;/p&gt;
+
+&lt;p&gt;캡슐화와 접근제어는 객체를 두 가지부분으로 나누어준다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;퍼블릭 인터페이스 public interface 외부에서 접근 가능한 부분.&lt;/li&gt;
+  &lt;li&gt;구현 implementaion 외부에서 접근 불가능하고 오직 내부에서만 접근 가능한 부분.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;→ 인터페이스와 구현의 분리(seperation of interface and implementation)은 훌륭한 객체지향 프로그램을 만들기 위해 따라야하는 핵힘 원칙이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;프로그래머의-자유&quot;&gt;프로그래머의 자유&lt;/h3&gt;
+
+&lt;p&gt;클래스 작성자: 진짜 객체만을 설계하고 구현함.&lt;/p&gt;
+
+&lt;p&gt;클라이언트 프로그래머: 클래스 작성자가 만들어준 객체를 가지고 요구사항을 구현함.&lt;/p&gt;
+
+&lt;p&gt;클래스 작성자는 적절한 접근 제한자를 사용함으로써 클라이언트 프로그래머에게 구현은닉을 한다. 이렇게되면 서로 인터페이스만 알고 있으면되고 내부에서의 수정은 자유롭게 해도 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;협력하는-객체들의-공동체&quot;&gt;협력하는 객체들의 공동체&lt;/h3&gt;
+
+&lt;p&gt;의미있는 표현을 위해 금액을 그냥 단순한 Int로 표현하는것보다 Money로 객체로 만들어서 표현하는게 전체적인 설계의 명확성과 유연성을 높이는 첫걸음이다.&lt;/p&gt;
+
+&lt;p&gt;객체는 다른 객체와 상호작용할 수 있는 유일한 방법은 메시지 전송(&lt;strong&gt;send a message&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;p&gt;객체는 다른객체의 인터페이스에 공개된 행동을 수행하도록 요청(&lt;strong&gt;request&lt;/strong&gt;)하고&lt;/p&gt;
+
+&lt;p&gt;요청을 받은 객체는 자율적인 방법(&lt;strong&gt;method&lt;/strong&gt;)에 따라 요청을 처리하여 응답(&lt;strong&gt;response&lt;/strong&gt;)한다.&lt;/p&gt;
+
+&lt;p&gt;메시지와 메서드의 구분에서부터 다형성(&lt;strong&gt;polymorphism&lt;/strong&gt;)의 개념이 시작된다.&lt;/p&gt;
+
+&lt;p&gt;코드의 의존성과 실행시점의 의존성이 다를 수 있다! 다시말하면 클래스 사이의 의존성과 객체 사이의 의존성은 동일하지 않을 수 있다라는 뜻!&lt;/p&gt;
+
+&lt;p&gt;→ 코드의 의존성과 실행시점의 의존성이 다르면 다를수록 코드를 이해하기는 어려워진다.(당연) 의존성의 양면성은 설계가 트레이드오프의 산물이라는 사실을 보여준다.&lt;/p&gt;
+
+&lt;p&gt;설계가 유연해질수록 코드를 이해하고 디버깅하기는 점점 더 어려워진다.
+유연성을 억제하면 코드를 이해하고 디버깅하기는 쉬워지지만 재사용성과 확장 가능성은 낮아진다.&lt;/p&gt;
+
+&lt;p&gt;항상 밸런스를 유지해야한다. 정답은 없다.&lt;/p&gt;
+
+&lt;h3 id=&quot;상속과-인터페이스&quot;&gt;상속과 인터페이스&lt;/h3&gt;
+
+&lt;p&gt;상속이 가치 있는 이유는 부모 클래스가 제공하는 모든 인터페이스를 자식 클래스가 물려 받을 수 있기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;인터페이스는 객체가 이해할 수 있는 메시지의 목록을 정의한것!!!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;결과적으로 자식 클래스는 부모 클래스가 수신할 수 있는 모든 메시지를 수신할 수 있기 때문에 외부 객체는 자식클래스를 부모클래스와 동일한 타입으로 간주 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;자식 클래스가 부모클래스를 대신하는것! 업캐스팅(&lt;strong&gt;upcating&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;p&gt;인터페이스를 재사용할 목적으로 상속을 사용해야한다. 그래야 변경에 유연한 코드를 만들 수 있다.
+&lt;img src=&quot;/assets/images/post-object-2/upcasting.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;다형성&quot;&gt;다형성&lt;/h3&gt;
+
+&lt;p&gt;인터페이스로 정의된 메시지에게 요청을 보내면, 실체화된 객체가 해당 메서드를 실행한다. 이처럼 메시지와 메서드는 엄현히 다른 개념이다. 다시말해, 동일한 메시지를 전달하지만 실제로 어떤 메서드가 실행될지는 실행시점에 달라지게 된다는 것이다. ← 다형성&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다형성은 객체지향 프로그램의 컴파일 시간 의존성과 실행시간 의존성이 다를 수 있다는 사실을 기반으로 한다. 서로 다른 메서드를 실행할 수 있는 원동력!!&lt;/li&gt;
+  &lt;li&gt;동일한 메시지를 수신했을 때 객체의 타입에따라 다르게 응답할 수 있는 능력.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;→ 즉 인터페이스가 동일해야 한다는 것이다.&lt;/p&gt;
+
+&lt;p&gt;인터페이스를 통일하기 위해 사용된것이 상속이다.&lt;/p&gt;
+
+&lt;p&gt;메시지와 메서드를 실행 시점에 바인딩하는 것 → 지연 바인딩(&lt;strong&gt;lazy binding&lt;/strong&gt;), 동적 바인딩(&lt;strong&gt;dynamic binding&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;p&gt;이것과는 반대로 컴파일 시점에 실행될 함수나 프로시저를 결정하는 것을 초기바인딩(&lt;strong&gt;early&lt;/strong&gt; &lt;strong&gt;binding&lt;/strong&gt;), 정적 바인딩(&lt;strong&gt;static binding&lt;/strong&gt;)이라한다.&lt;/p&gt;
+
+&lt;p&gt;하지만 다형성이란 말은 추상적인 개념이며 꼭 상속을 통한 구현만이 다형성이다라고 할 순 없다.&lt;/p&gt;
+
+&lt;p&gt;?protocol을 위한 채택 서브타이핑?&lt;/p&gt;
+
+&lt;h3 id=&quot;추상화의-힘&quot;&gt;추상화의 힘&lt;/h3&gt;
+
+&lt;p&gt;추상화는 객체를 포괄하는 상위 개념이다. 추상화를 사용할 경우 두가지 장점이 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;추상화의 계층만 따로 떼어 놓고 보면 요구사항의 정책을 높은 수준에서 서술 할 수 있다는것.&lt;/li&gt;
+  &lt;li&gt;설계가 좀더 유연해진다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;디자인 패턴(&lt;strong&gt;design pattern&lt;/strong&gt;), 프레임워크(&lt;strong&gt;framework&lt;/strong&gt;)는 모두 추상화를 이용해 상위 정책을 정의하는 객체지향의 메커니즘을 활용한 것이다.&lt;/p&gt;
+
+&lt;p&gt;추상화가 유연한 설계를 가능하게 하는 이유는 설계가 구체적인 상황에 결합되는 것을 방지하기 때문.&lt;/p&gt;
+
+&lt;p&gt;67page&lt;/p&gt;
+
+&lt;h3 id=&quot;상속&quot;&gt;상속&lt;/h3&gt;
+
+&lt;p&gt;상속은 캡슐화를 위반한다. 자식클래스에게 부모클래스의 내부를 보여주고, 자식클래스가 부모클래스에 강하게 결합된다!&lt;/p&gt;
+
+&lt;h3 id=&quot;합성&quot;&gt;합성&lt;/h3&gt;
+
+&lt;p&gt;외부에 주입을 받는 모습이다.&lt;/p&gt;
+
+&lt;p&gt;상속을 통해 사용하는 클래스가 세분화 할 수 있게 할 수있지만, 그렇게하면 유연하지 못하게 된다.(상속받은 클래스만 사용해야 하기 때문, 부모 클래스의 코드와 자식 클래스의 코드를 컴파일 시점에 하나의 단위로 강하게 결합 하기 때문) 이 책에선 이렇게 이야기한다.&lt;/p&gt;
+
+&lt;p&gt;합성이란, 인터페이스에 정의된 메시지를 통해서만 코드를 재사용하는 방법.&lt;/p&gt;
+
+&lt;p&gt;상속이 가지는 두 가지 문제점을 모두 해결한다.&lt;/p&gt;
+
+&lt;p&gt;즉, 보통 우리가 구현했던 클래스는 합성이었다는 것이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;틀린점이나 이상한점이 있다면 제보 감사합니다. :)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;모든 그림과 내용은
+&lt;a href=&quot;http://www.yes24.com/Product/Goods/74219491&quot; title=&quot;책사기!&quot;&gt;오브젝트: 코드로 이해하는 객체지향 설계 - 조영호&lt;/a&gt;
+님의 책에서 나온 내용입니다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Napster</name></author><category term="객체" /><category term="프로그래밍" /><category term="객체지향 프로그래밍" /><summary type="html">객체지향 프로그래밍</summary></entry><entry><title type="html">[오브젝트] 1. 객체, 설계</title><link href="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/" rel="alternate" type="text/html" title="[오브젝트] 1. 객체, 설계" /><published>2021-03-30T00:00:00+09:00</published><updated>2021-03-30T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,%20%EC%84%A4%EA%B3%84</id><content type="html" xml:base="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/">&lt;h1 id=&quot;객체-설계&quot;&gt;객체, 설계&lt;/h1&gt;
 
 &lt;p&gt;“이론이 먼저일까, 실무가 먼저일까?”
 소프트웨어의 분야는 오랜 역사가 깊지 않기 때문에 이론보다 실무가 먼저이다. 실무가 성숙해지는 시점에 이론이 실무를 추월하는게 보통 정설이다.

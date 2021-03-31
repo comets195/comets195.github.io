@@ -28,4 +28,10 @@ var store = [{
         "tags": ["객체","설계"],
         "url": "http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B0%9D%EC%B2%B4,-%EC%84%A4%EA%B3%84/",
         "teaser": "http://localhost:4000/assets/images/logo.jpg"
+      },{
+        "title": "[오브젝트] 2. 객체지향프로그래밍",
+        "excerpt":"객체지향 프로그래밍 객체지향 패러다임 → 클래스가 아닌 객체에 초점을 맞춰야한다. 객체…에 집중해야한다. 어떤 객체들이 어떤 상태와 행동을 가지는지 결정한다. 객체는 독립적인 존재가 아니라 기능을 구현하기 위해 협력하는 공동체의 일원이다. 객체들의 모양과 윤곽이 잡히면, 공통된 특성과 상태를 가진 객체들을 타입으로 분류하고 이 타입을 기반으로 클래스를 구현하자. 자율적인 객체 객체는 상태와 행동을...","categories": ["객체지향"],
+        "tags": ["객체","프로그래밍","객체지향 프로그래밍"],
+        "url": "http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/",
+        "teaser": "http://localhost:4000/assets/images/logo.jpg"
       }]
