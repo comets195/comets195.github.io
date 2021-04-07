@@ -1,4 +1,4 @@
-I"Ž
+I"î
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -6,11 +6,13 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          Napster'iOS
+          Napster's iOSðŸ”–
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
