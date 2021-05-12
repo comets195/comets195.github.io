@@ -40,4 +40,10 @@ var store = [{
         "tags": ["프로그래밍","객체지향 프로그래밍"],
         "url": "http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%97%AD%ED%95%A0,-%EC%B1%85%EC%9E%84,-%ED%98%91%EB%A0%A5/",
         "teaser": "http://localhost:4000/assets/images/logo.jpg"
+      },{
+        "title": "[OS] 1. 서론, 프로세스",
+        "excerpt":"프로세스 Context Switch CPU가 이 과정을 진행 중일땐 Over Head라 한다. 보조 기억 장치에 저장되어 있는걸 보통 프로그램이라 한다. 이 프로그램이 OS에 의해서 주 기억장치로 올라오게되면(실행하면) 이때부터 프로세스라 불린다. 프로세스 상태 그림 new ready running waiting terminated 프로세스의 상태의 천이는 해당 프로세스가 CPU에 의해 실행이 되고 있을때 혹은 I/O에 의해서...","categories": ["OS"],
+        "tags": ["OS","CS"],
+        "url": "http://localhost:4000/os/OS-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/",
+        "teaser": "http://localhost:4000/assets/images/logo.jpg"
       }]

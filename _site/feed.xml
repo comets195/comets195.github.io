@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-04-07T10:15:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’s iOS🔖</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">[오브젝트] 3. 역할, 책임, 협력</title><link href="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%97%AD%ED%95%A0,-%EC%B1%85%EC%9E%84,-%ED%98%91%EB%A0%A5/" rel="alternate" type="text/html" title="[오브젝트] 3. 역할, 책임, 협력" /><published>2021-04-06T00:00:00+09:00</published><updated>2021-04-06T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%97%AD%ED%95%A0,%20%EC%B1%85%EC%9E%84,%20%ED%98%91%EB%A0%A5</id><content type="html" xml:base="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%97%AD%ED%95%A0,-%EC%B1%85%EC%9E%84,-%ED%98%91%EB%A0%A5/">&lt;h1 id=&quot;역할-책임-협력&quot;&gt;역할, 책임, 협력&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-05-12T16:47:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’s iOS🔖</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">[OS] 1. 서론, 프로세스</title><link href="http://localhost:4000/os/OS-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/" rel="alternate" type="text/html" title="[OS] 1. 서론, 프로세스" /><published>2021-05-12T00:00:00+09:00</published><updated>2021-05-12T00:00:00+09:00</updated><id>http://localhost:4000/os/OS%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4</id><content type="html" xml:base="http://localhost:4000/os/OS-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/">&lt;h1 id=&quot;프로세스&quot;&gt;프로세스&lt;/h1&gt;
+&lt;p&gt;Context Switch&lt;/p&gt;
+
+&lt;p&gt;CPU가 이 과정을 진행 중일땐 Over Head라 한다.&lt;/p&gt;
+
+&lt;p&gt;보조 기억 장치에 저장되어 있는걸 보통 프로그램이라 한다. 이 프로그램이 OS에 의해서 주 기억장치로 올라오게되면(실행하면) 이때부터 프로세스라 불린다.&lt;/p&gt;
+
+&lt;p&gt;프로세스 상태 그림&lt;/p&gt;
+
+&lt;p&gt;new
+ready
+running
+waiting
+terminated&lt;/p&gt;
+
+&lt;p&gt;프로세스의 상태의 천이는 해당 프로세스가 CPU에 의해 실행이 되고 있을때 혹은 I/O에 의해서 변화가 생겼을때 프로세스의 상태는 바뀌게 된다.&lt;/p&gt;
+
+&lt;p&gt;맨처음 프로세스의 상태는 new가되고 생성이 완료되면 ready 상태에 돌입한다. 동작을 하는동안은running일 것이고, I/O의 처리가 필요할때 waiting으로 바뀌고 완료가되면 다시 ready로 돌아온다. 프로세스는 종료될때까지 계속 무한반복한다. 종료되면 끝. Time Sharing System 인 OS에서는 한가지 길이 더 생기는데 running 과 ready사이를 오갈 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;process-control-blockpcb&quot;&gt;Process Control Block(PCB)&lt;/h2&gt;
+
+&lt;p&gt;그렇다면 PCB는 뭘까? 프로세스 블락이다! 운영체제가 여러 프로세스를 관리할 때 각각의 프로세스의 상태와 모든 정보를 저장해야하는데 그걸 다 통틀어서 PCB 라고한다! 왜 상태를 저장해야할까? 그 이유는 CPU 여러 프로세스를 돌볼때, 1번을 돌보고난뒤 2번을 돌보러갈때 2번에 맞는 상태로 CPU의 레지스트 라던지 메모리의 시작값을 변경해야하는데 그걸 PCB에서 찾아서 세팅을 한다는 이야기이다.&lt;/p&gt;
+
+&lt;p&gt;PCB와 Multi Thread의 차이점?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;추가로 알아두면 나중에도 나오니까 좋은 것들&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;프로세스(Process)&lt;/p&gt;
+
+&lt;p&gt;프로세스는 실행 중인 프로그램으로 디스크로부터 메모리에 적재되어 CPU의 할당을 받을 수 있는 것을 말한다. 프로세스는 함수의 매개변수, 복귀 주소와 로컬변수같은 임시 자료를 갖는 프로세스 스택도 포함한다. 또한 프로세스는 실행 중일때 동적으로 할당되는 힙메모리도 포함이다.&lt;/p&gt;
+
+&lt;p&gt;프로세스 제어플록(PCB)
+특성 프로세스에 대한 중요한 정보들을 저장하고 있는 운영체제의 자료구조. 중요한 정보란건 CPU의 할당을 받아 작업을 처리하다가도 프로세스 전환이 일어나면 작업하던걸 저장하고 CPU에 반납해야하는데 PCB에 이때의 모든 작업상황을 저장한다. 그리고 다시 CPU에 할당을 받으면 PCB에 저장되어있던 걸 불러와 다시 작업을 시작할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;스레드thread&quot;&gt;&lt;strong&gt;스레드(Thread)&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;스레드는 프로세스의 실행 단위라고 할 수 있다. 한 프로세스 내에서 동작되는 여러 실행 흐름으로 프로세스 내의 주소 공간이나 자원을 공유할 수 있다. 스레드는 스레드 ID, 프로그램 카운터, 레지스터 집합, 그리고 스택으로 구성된다. 같은 프로세스에 속한 다른 스레드와 코드, 데이터 섹션, 그리고 열린 파일이나 신호와 같은 운영체제 자원들을 공유한다. &lt;strong&gt;하나의 프로세스를 다수의 실행 단위로 구분하여 자원을 공유하고 자원의 생성과 관리의 중복성을 최소화하여 수행 능력을 향상시키는 것을 멀티스레딩이라고 한다.&lt;/strong&gt; 이 경우 각각의 스레드는 독립적인 작업을 수행해야 하기 때문에 각자의 스택과 PC 레지스터 값을 갖고 있다.&lt;/p&gt;
+
+&lt;p&gt;스택을 스레드마다 독립적으로 할당하는 이유는 독립적인 실행 흐름을 추가하기 위한 최소 조건으로 독립된 스택을 할당한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;멀티-스레딩의-장점&quot;&gt;&lt;strong&gt;멀티 스레딩의 장점&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;프로세스를 이용하여 동시에 처리하던 일을 스레드로 구현할 경우 메모리 공간과 시스템 자원 소모가 줄어들게 된다. 스레드 간의 통신이 필요한 경우에도 별도의 자원을 이용하는 것이 아니라 전역 변수의 공간 또는 동적으로 할당된 공간인 Heap 영역을 이용하여 데이터를 주고받을 수 있다. 그렇기 때문에 프로세스 간 통신 방법에 비해 스레드 간의 통신 방법이 훨씬 간단하다. &lt;strong&gt;심지어 스레드의 context switch 는 프로세스 context switch 와는 달리 캐시 메모리를 비울 필요가 없기 때문에 더 빠르다.&lt;/strong&gt; 따라서 시스템의 throughtput 이 향상되고 자원 소모가 줄어들며 자연스럽게 프로그램의 응답 시간이 단축된다. 이러한 장점 때문에 여러 프로세스로 할 수 있는 작업들을 하나의 프로세스에서 스레드로 나눠 수행하는 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;멀티-스레딩의-문제점&quot;&gt;&lt;strong&gt;멀티 스레딩의 문제점&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;멀티 프로세스 기반으로 프로그래밍할 때는 프로세스 간 공유하는 자원이 없기 때문에 동일한 자원에 동시에 접근하는 일이 없었지만 멀티 스레딩을 기반으로 프로그래밍할 때는 이 부분을 신경써줘야 한다. 서로 다른 스레드가 &lt;strong&gt;데이터와 힙 영역을 공유하기 때문에 어떤 스레드가 다른 스레드에서 사용중인 변수나 자료구조에 접근하여 엉뚱한 값을 읽어오거나 수정할 수 있다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;그렇기 때문에 멀티스레딩 환경에서는 동기화 작업이 필요하다. 동기화를 통해 작업 처리 순서를 컨트롤 하고 공유 자원에 대한 접근을 컨트롤 하는 것이다. 하지만 이로 인해 병목현상이 발생하여 성능이 저하될 가능성이 높다. 그러므로 과도한 락으로 인한 병목현상을 줄여야 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;멀티-스레드-vs-멀티-프로세스&quot;&gt;&lt;strong&gt;멀티 스레드 vs 멀티 프로세스&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;멀티 스레드는 멀티 프로세스보다 적은 메모리 공간을 차지하고 문맥 전환이 빠르다는 장점이 있지만, 오류로 인해 하나의 스레드가 종료되면 전체 스레드가 종료될 수 있다는 점과 동기화 문제를 안고 있다. 반면 멀티 프로세스 방식은 하나의 프로세스가 죽더라도 다른 프로세스에는 영향을 끼치지 않고 정상적으로 수행된다는 장점이 있지만, 멀티 스레드보다 많은 메모리 공간과 CPU 시간을 차지한다는 단점이 존재한다. 이 두 가지는 동시에 여러 작업을 수행한다는 점에서 같지만 적용해야 하는 시스템에 따라 적합/부적합이 구분된다. 따라서 대상 시스템의 특징에 따라 적합한 동작 방식을 선택하고 적용해야 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;queues&quot;&gt;Queues&lt;/h2&gt;
+
+&lt;p&gt;OS가 할일들(Job, Process, Task)을 처리할 때, 해야할 작업들을 모아 놓은 큐라고 생각하면 된다. Queue에는 크게 3가지가 OS내에 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Job Queue&lt;/p&gt;
+
+    &lt;p&gt;이 녀석은 보조기억장치에서 주기억장치로 옮겨질때 줄을 서야하는 Queue이다. 주기억장치가 꽉찼다면 당연히 줄서있던 Queue에서 지연이 발생할 것이다. 그렇다면 어떻게 Queue에 쌓인 작업들을 처리하는게 좋을까? 가장 단순한 방법은 요청한 순서대로 작업을 처리하는 방법이 있겠지만 효율적으로 관리하기 위해 다른 방법도 있을 것이다. 이러한 방법을 결정해주는게 Job Scheduler 라 부른다. 일반적으로 주기억장치로의 이동은 긴 시간이 소요된다. 왜냐하면 주기억장치에 있는 프로세스가 끝날때 혹은 비워졌을때에 비로소 보조기억장치에 있던 프로그램이 올 수 있기때문이다. 그래서 이걸  Long-term scheduler 라고도 한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ready Queue&lt;/p&gt;
+
+    &lt;p&gt;프로세스의 상태 천이도 (State Diagram)에 ready 상태가 있기 때문에 Ready Queue 라는 이름이 붙혀졌다.  CPU가 작업해야할 프로세스들이 Queue에 있는상태로 마찬가지로 Scheduler를 가지고 있으며 이를 CPU Scheduler라 한다.  짧은 시간안에 아주 빈번하게 일어나며 그래서 Short-term scheduler라 하는것.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Device Queue&lt;/p&gt;
+
+    &lt;p&gt;프린트나 마우스 I/O와 관련된 Queue 작업! 이것또한 Device Scheduler가 존재한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;multiprogramming&quot;&gt;Multiprogramming&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Degree of multiprogramming&lt;/p&gt;
+
+    &lt;p&gt;주기억장치(메모리)에 얼마나 많은 프로세스가 동작할 수 있는지의 대한 척도&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;각각의 프로세스마다 어떤 작업이 주로 이루어지는지에 대한 정도를 알려준다&lt;/p&gt;
+
+    &lt;p&gt;I/O - bound, CPU-bound process&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Medium-term scheduler 이건 주기억장치에 프로세스가 아무일도 안하는데 오랜시간 점유하고있을때 보조기억장치로 넘기는데 이걸 Swap Out이라 한다. 다시 사용할때 주기억장치로 불러오는걸 Swap In 합쳐서 Swapping이다. 이행위는 Short term, 보다 늦게 Long term보다는 자주 일어나서 Medium-term이다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;process-creation&quot;&gt;Process Creation&lt;/h2&gt;
+
+&lt;p&gt;프로세스는 프로세스에 의해 만들어진다!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;부모 프로세스(Parent Process)&lt;/li&gt;
+  &lt;li&gt;자식 프로세스(Child Process)&lt;/li&gt;
+  &lt;li&gt;프로세스는 트리 자료구조로 구현되어있다.&lt;/li&gt;
+  &lt;li&gt;PID(Process Identifier)&lt;/li&gt;
+  &lt;li&gt;PPID(Parent PID)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+틀린점이나 이상한점이 있다면 제보 감사합니다. :)&lt;/p&gt;
+
+&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=248698595&quot; title=&quot;책사기!&quot;&gt;운영체제&lt;/a&gt; 공룡책&lt;/li&gt;
+  &lt;li&gt;온라인 강의 - &lt;a href=&quot;http://www.kocw.net/home/search/kemView.do?kemId=978503&quot;&gt;경성대 양희재 교수님&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Napster</name></author><category term="OS" /><category term="CS" /><summary type="html">프로세스 Context Switch</summary></entry><entry><title type="html">[오브젝트] 3. 역할, 책임, 협력</title><link href="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%97%AD%ED%95%A0,-%EC%B1%85%EC%9E%84,-%ED%98%91%EB%A0%A5/" rel="alternate" type="text/html" title="[오브젝트] 3. 역할, 책임, 협력" /><published>2021-04-06T00:00:00+09:00</published><updated>2021-04-06T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%97%AD%ED%95%A0,%20%EC%B1%85%EC%9E%84,%20%ED%98%91%EB%A0%A5</id><content type="html" xml:base="http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%97%AD%ED%95%A0,-%EC%B1%85%EC%9E%84,-%ED%98%91%EB%A0%A5/">&lt;h1 id=&quot;역할-책임-협력&quot;&gt;역할, 책임, 협력&lt;/h1&gt;
 
 &lt;p&gt;객체지향 패러다임의 핵심은 역할(role), 책임(responsibilty), 협력(collaboration)이다. 
 2장에 있었던 내용들이 안중요한건 아니지만 구현에 너무 치우쳐져 있던 설명이었다. 객체지향 패러다임의 본질과는 조금 거리가 멀다.&lt;/p&gt;
@@ -318,7 +433,20 @@
   &lt;li&gt;3,4에 속할 수 있도록 힘써야겠다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;어느 글에서 연차는 중요 하지 않다고 쓰여진 것을 보았다. 그렇게 되려면 현재의 모습에 안주해서는 안된다.&lt;/p&gt;</content><author><name>Napster</name></author><summary type="html">나의 위치를 가늠해 볼 수 있는 약간의 시야 다음은 JK가 보내주신 포스팅이다.</summary></entry><entry><title type="html">[Raywenderlich] Concurrency 1: 소개</title><link href="http://localhost:4000/concurrency/Concurrency1/" rel="alternate" type="text/html" title="[Raywenderlich] Concurrency 1: 소개" /><published>2020-04-20T00:00:00+09:00</published><updated>2020-04-20T00:00:00+09:00</updated><id>http://localhost:4000/concurrency/Concurrency1</id><content type="html" xml:base="http://localhost:4000/concurrency/Concurrency1/">&lt;h1 id=&quot;concurrency란-무엇인가&quot;&gt;Concurrency란 무엇인가?&lt;/h1&gt;
+&lt;p&gt;어느 글에서 연차는 중요 하지 않다고 쓰여진 것을 보았다. 그렇게 되려면 현재의 모습에 안주해서는 안된다.&lt;/p&gt;</content><author><name>Napster</name></author><summary type="html">나의 위치를 가늠해 볼 수 있는 약간의 시야 다음은 JK가 보내주신 포스팅이다.</summary></entry><entry><title type="html">Hello Swift World!</title><link href="http://localhost:4000/%EC%8B%9C%EC%9E%91/Hello-Swift/" rel="alternate" type="text/html" title="Hello Swift World!" /><published>2020-04-20T00:00:00+09:00</published><updated>2020-04-20T00:00:00+09:00</updated><id>http://localhost:4000/%EC%8B%9C%EC%9E%91/Hello%20Swift</id><content type="html" xml:base="http://localhost:4000/%EC%8B%9C%EC%9E%91/Hello-Swift/">&lt;h1 id=&quot;hello-swift-world&quot;&gt;Hello Swift World!&lt;/h1&gt;
+
+&lt;p&gt;안녕하세요?
+첫번째 포스팅입니다. 앞으로 블로그를 어떻게 운영하면 좋을지에 대한 간략한 소개들 정도 되겠네요.&lt;/p&gt;
+
+&lt;p&gt;저는 iOS개발자 입니다. 아직 한참 배울께 많죠. 그래서 아는 것도 다시한번 정리해보는 시간을 갖는 것과 잘못 알고 있는 것을 피드백을 통해 고치려고합니다. 알게된 것들은 구글 검색을 통해 알게되는 것도 있겠지만 공식문서를 기반으로 알아가보려합니다.&lt;/p&gt;
+
+&lt;p&gt;매주 혹은 2주마다 하나씩 큰 주제를 정하고 그에 맞는 공식문서의 내용과 내가 생각한게 맞는지를 검증하는 코드와 함께 포스팅을 할 예정입니다.&lt;/p&gt;
+
+&lt;p&gt;꾸준히 블로그를 할 수 있길 바라며 이글을 시작으로 블로그를 시작해보려합니다.&lt;/p&gt;
+
+&lt;p&gt;감사합니다.&lt;/p&gt;
+
+&lt;p&gt;Napster.&lt;/p&gt;</content><author><name>Napster</name></author><summary type="html">Hello Swift World!</summary></entry><entry><title type="html">[Raywenderlich] Concurrency 1: 소개</title><link href="http://localhost:4000/concurrency/Concurrency1/" rel="alternate" type="text/html" title="[Raywenderlich] Concurrency 1: 소개" /><published>2020-04-20T00:00:00+09:00</published><updated>2020-04-20T00:00:00+09:00</updated><id>http://localhost:4000/concurrency/Concurrency1</id><content type="html" xml:base="http://localhost:4000/concurrency/Concurrency1/">&lt;h1 id=&quot;concurrency란-무엇인가&quot;&gt;Concurrency란 무엇인가?&lt;/h1&gt;
 &lt;p&gt;회사의 프로젝트를 진행하면서 iOS의 동시성 프로그래밍의 개념 공부가 필요해졌었다. 
 필요로 했던 기능은 이미지 업로드 서버 요청과 동시에 UI에 업로드 중이라는 변화를 보여줘야하는 기능이었다.&lt;/p&gt;
 
@@ -355,17 +483,4 @@
 
 &lt;ul&gt;
   &lt;li&gt;틀린점이나 이상한점이 있다면 제보 감사합니다. :)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Napster</name></author><summary type="html">Concurrency란 무엇인가? 회사의 프로젝트를 진행하면서 iOS의 동시성 프로그래밍의 개념 공부가 필요해졌었다. 필요로 했던 기능은 이미지 업로드 서버 요청과 동시에 UI에 업로드 중이라는 변화를 보여줘야하는 기능이었다.</summary></entry><entry><title type="html">Hello Swift World!</title><link href="http://localhost:4000/%EC%8B%9C%EC%9E%91/Hello-Swift/" rel="alternate" type="text/html" title="Hello Swift World!" /><published>2020-04-20T00:00:00+09:00</published><updated>2020-04-20T00:00:00+09:00</updated><id>http://localhost:4000/%EC%8B%9C%EC%9E%91/Hello%20Swift</id><content type="html" xml:base="http://localhost:4000/%EC%8B%9C%EC%9E%91/Hello-Swift/">&lt;h1 id=&quot;hello-swift-world&quot;&gt;Hello Swift World!&lt;/h1&gt;
-
-&lt;p&gt;안녕하세요?
-첫번째 포스팅입니다. 앞으로 블로그를 어떻게 운영하면 좋을지에 대한 간략한 소개들 정도 되겠네요.&lt;/p&gt;
-
-&lt;p&gt;저는 iOS개발자 입니다. 아직 한참 배울께 많죠. 그래서 아는 것도 다시한번 정리해보는 시간을 갖는 것과 잘못 알고 있는 것을 피드백을 통해 고치려고합니다. 알게된 것들은 구글 검색을 통해 알게되는 것도 있겠지만 공식문서를 기반으로 알아가보려합니다.&lt;/p&gt;
-
-&lt;p&gt;매주 혹은 2주마다 하나씩 큰 주제를 정하고 그에 맞는 공식문서의 내용과 내가 생각한게 맞는지를 검증하는 코드와 함께 포스팅을 할 예정입니다.&lt;/p&gt;
-
-&lt;p&gt;꾸준히 블로그를 할 수 있길 바라며 이글을 시작으로 블로그를 시작해보려합니다.&lt;/p&gt;
-
-&lt;p&gt;감사합니다.&lt;/p&gt;
-
-&lt;p&gt;Napster.&lt;/p&gt;</content><author><name>Napster</name></author><summary type="html">Hello Swift World!</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Napster</name></author><summary type="html">Concurrency란 무엇인가? 회사의 프로젝트를 진행하면서 iOS의 동시성 프로그래밍의 개념 공부가 필요해졌었다. 필요로 했던 기능은 이미지 업로드 서버 요청과 동시에 UI에 업로드 중이라는 변화를 보여줘야하는 기능이었다.</summary></entry></feed>
