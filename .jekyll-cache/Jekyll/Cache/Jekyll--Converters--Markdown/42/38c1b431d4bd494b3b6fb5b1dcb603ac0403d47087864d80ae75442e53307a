@@ -1,0 +1,61 @@
+I"�<h1 id="interfacbuilder없이-앱-제작">Interfacbuilder없이 앱 제작</h1>
+
+<p><a href="https://github.com/devxoul/RxTodo">devxoul/RxTodo</a></p>
+
+<p>스토리보드 없이 앱을 제작해보려하니 기초지식이 많이 부족했다. 그래서 RxTodo 앱을 베이스로 카피캣으로 기초를 다져볼까한다.</p>
+
+<h1 id="appdelegate">AppDelegate</h1>
+
+<p>일단 AppDelegate 가 무슨일을 하는지 역활부터 정확히 알아보자.</p>
+
+<p>최상단에 import UIKit이 있다. Apple에서 UIKit은 User Interface와 관련된 일을 하는 framework다. AppDelegate에 이게 선언 되었다는건, 유저인터페이스와 관련된게 필요하다는 뜻일 것이다.</p>
+
+<h3 id="main은-무엇을-하는가">main은 무엇을 하는가</h3>
+
+<p>AppDelegate에서 @UIApplicationMain이 있다는것은 @은 Attribute를 말하는데 선언, 타입에 대한 추가정보를 알려준다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@UIApplicationMain</span>
+<span class="kd">class</span> <span class="kt">AppDelegate</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>@UIApplicationMain이란 뜻은 AppDelegate클래스가 말그대로 application delegate라는 뜻이다. 그럼 UIApplicationMain은 application object가 만들어질때 <code class="highlighter-rouge">main</code> 의 진입점을 의미한다. 앱이 실행됬을때 시작점! start executing code를 iOS는 알아야한다!그걸 정해주는 Attribute이다. 즉 main.swift는 시스템에게 앱의 시작점을 명시해 주는 것이고, main.swift 를 쓰지 않는다면 attribute를 통해 알려줘야하고, ‘UIApplicationMain’ class must conform to the ‘UIApplicationDelegate’ protocol 해야한다!
+즉, AppDelegate라는 객체가 앱의 Entry Point며 앱의 Delegate역활을 한다고 할 수 있다.</p>
+
+<p>앱이 launch될때 시스템이 <a href="https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain">UIApplicationMain</a> 을 호출하여 <a href="https://developer.apple.com/documentation/uikit/uiapplication">UIApplication</a>이라는 싱글톤 객체를 만들게 된다.우리가 보통 UIApplication.shared해서 접근할 수 있는 이유가 이때문이다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">MockAppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{}</span>
+
+<span class="kd">private</span> <span class="kd">func</span> <span class="nf">appDelegateClassName</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">isTesting</span> <span class="o">=</span> <span class="kt">NSClassFromString</span><span class="p">(</span><span class="s">"XCTestCase"</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">nil</span>
+  <span class="k">return</span> <span class="kt">NSStringFromClass</span><span class="p">(</span><span class="n">isTesting</span> <span class="p">?</span> <span class="kt">MockAppDelegate</span><span class="o">.</span><span class="nv">self</span> <span class="p">:</span> <span class="kt">AppDelegate</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>main.swift에서, MockAppDelegate를 만들어 주는 이유는 다음과 같다. 유닛 테스트를 진행할때 Code Coverage를 볼 수가 있는데 AppDelegate를 그냥 사용하게 되면 테스트 코드가 있지도 않은데, 앱이 실행이 됨과 동시에 코드 호출이 되어 테스트가 된것 처럼 되버린다. 그래서 의미없는 Code Coverage가 나오게된다. 그렇게 하지 않기 위해 테스트 케이스일땐 아무 실행을 하지 않는 MockAppDelegate를 실행하게 한다.</p>
+
+<h3 id="uiresponder">UIResponder</h3>
+
+<p>UIResponder class는 객체(objects)들의 인터페이스를 정의하는데, 어떤 객체냐면 이벤트들에 응답하고 관리가 되어야하는 객체들을 위한 인터페이스를 정의한 클래스이다. 그래서 UIApplication와 UIView는 UIResponder의 subclasses이다! 이러한 클래스들의 객체들은 응답(responder) 객체들로써 혹은 간단하게 responders로써 참조 되어진다. 말그대로 여러가지 이벤트들, 특히 유저들의 터치와 모션 이벤트가 있다. 이러한 이벤트들을 다룰수 있게 인터페이스를 제공해주는 상위 클래스란 뜻이다.</p>
+
+<p><a href="https://developer.apple.com/documentation/uikit/uiresponder">UIResponder</a>에서 Responding to Touch Events에 가보면 자세한 메소드들이 나와있다.</p>
+
+<p>AppDelgate가 UIResponder를 상속한다는건 말그대로 유저들의 액션들을 다룰 수 있는 인터페이스를 갖게 된다는 뜻이된다.</p>
+
+<h3 id="uiapplicationdelegate">UIApplicationDelegate</h3>
+
+<p><a href="https://developer.apple.com/documentation/uikit">App Lifecycle</a>과 관련된 response를 알려주는 interface 프로토콜이다. 이건 잘들 알고 있으실테니 넘어가겠다.</p>
+
+<h3 id="uiwindow">UIWindow</h3>
+
+<p>UIWindow없이는 유저가 발생하는 이벤트에 적절한 반응을 하거나 화면에 UI를 보여줄 수가 없다. UIWindow자체는 시각적인 요소를 보여주는걸 자체적으로 가지고 있지는 않는다. 하지만 앱의 View를 보여주는데 결정적인 역할을 할뿐더러 이벤트들을 다룰수 있게 해준다. 그니까 UIWindow 없이 UIView만 딸랑 보여주면 시각적으로 볼수도 없을 뿐더러 유저에 대한 이벤트 터치, 모션을 처리할 수 없다는 뜻. 정작 자신은 시각적 요소를 가지고 있지 않는데 말이다.</p>
+
+<p>스토리보드 없이 한다면 UIWindow를 코드로 생성해줘야함. 여러 윈도우가 있을 수 있고 발생한 이벤트를 적절한 윈도우를 선택해 처리하게 된다! ← 여러윈도우가 있을 수 있다는건 몰랐던 사실이다.</p>
+
+<p><br />
+틀린점이나 이상한점이 있다면 제보 감사합니다. :)</p>
+
+<h1 id="참고">참고</h1>
+
+<p><a href="https://medium.com/@Dougly/breaking-down-the-appdelegate-swift-3-258e48f907d6">Breaking Down the AppDelegate (swift 3)</a></p>
+
+:ET

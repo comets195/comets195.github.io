@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-05-12T16:47:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’s iOS🔖</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">[OS] 1. 서론, 프로세스</title><link href="http://localhost:4000/os/OS-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/" rel="alternate" type="text/html" title="[OS] 1. 서론, 프로세스" /><published>2021-05-12T00:00:00+09:00</published><updated>2021-05-12T00:00:00+09:00</updated><id>http://localhost:4000/os/OS%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4</id><content type="html" xml:base="http://localhost:4000/os/OS-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/">&lt;h1 id=&quot;프로세스&quot;&gt;프로세스&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-06-11T14:49:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Napster’s iOS🔖</title><subtitle>하루하루 열심히.</subtitle><author><name>Napster</name></author><entry><title type="html">[iOS] App의 시작점은 어디일까</title><link href="http://localhost:4000/ios/iOS-App%EC%9D%98-%EC%8B%9C%EC%9E%91%EC%A0%90/" rel="alternate" type="text/html" title="[iOS] App의 시작점은 어디일까" /><published>2021-06-11T00:00:00+09:00</published><updated>2021-06-11T00:00:00+09:00</updated><id>http://localhost:4000/ios/iOS%20App%EC%9D%98%20%EC%8B%9C%EC%9E%91%EC%A0%90</id><content type="html" xml:base="http://localhost:4000/ios/iOS-App%EC%9D%98-%EC%8B%9C%EC%9E%91%EC%A0%90/">&lt;h1 id=&quot;interfacbuilder없이-앱-제작&quot;&gt;Interfacbuilder없이 앱 제작&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/devxoul/RxTodo&quot;&gt;devxoul/RxTodo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;스토리보드 없이 앱을 제작해보려하니 기초지식이 많이 부족했다. 그래서 RxTodo 앱을 베이스로 카피캣으로 기초를 다져볼까한다.&lt;/p&gt;
+
+&lt;h1 id=&quot;appdelegate&quot;&gt;AppDelegate&lt;/h1&gt;
+
+&lt;p&gt;일단 AppDelegate 가 무슨일을 하는지 역활부터 정확히 알아보자.&lt;/p&gt;
+
+&lt;p&gt;최상단에 import UIKit이 있다. Apple에서 UIKit은 User Interface와 관련된 일을 하는 framework다. AppDelegate에 이게 선언 되었다는건, 유저인터페이스와 관련된게 필요하다는 뜻일 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;main은-무엇을-하는가&quot;&gt;main은 무엇을 하는가&lt;/h3&gt;
+
+&lt;p&gt;AppDelegate에서 @UIApplicationMain이 있다는것은 @은 Attribute를 말하는데 선언, 타입에 대한 추가정보를 알려준다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;@UIApplicationMain&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AppDelegate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;@UIApplicationMain이란 뜻은 AppDelegate클래스가 말그대로 application delegate라는 뜻이다. 그럼 UIApplicationMain은 application object가 만들어질때 &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; 의 진입점을 의미한다. 앱이 실행됬을때 시작점! start executing code를 iOS는 알아야한다!그걸 정해주는 Attribute이다. 즉 main.swift는 시스템에게 앱의 시작점을 명시해 주는 것이고, main.swift 를 쓰지 않는다면 attribute를 통해 알려줘야하고, ‘UIApplicationMain’ class must conform to the ‘UIApplicationDelegate’ protocol 해야한다!
+즉, AppDelegate라는 객체가 앱의 Entry Point며 앱의 Delegate역활을 한다고 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;앱이 launch될때 시스템이 &lt;a href=&quot;https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain&quot;&gt;UIApplicationMain&lt;/a&gt; 을 호출하여 &lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiapplication&quot;&gt;UIApplication&lt;/a&gt;이라는 싱글톤 객체를 만들게 된다.우리가 보통 UIApplication.shared해서 접근할 수 있는 이유가 이때문이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MockAppDelegate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIResponder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIApplicationDelegate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;appDelegateClassName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;isTesting&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSClassFromString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XCTestCase&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSStringFromClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isTesting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MockAppDelegate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;AppDelegate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;main.swift에서, MockAppDelegate를 만들어 주는 이유는 다음과 같다. 유닛 테스트를 진행할때 Code Coverage를 볼 수가 있는데 AppDelegate를 그냥 사용하게 되면 테스트 코드가 있지도 않은데, 앱이 실행이 됨과 동시에 코드 호출이 되어 테스트가 된것 처럼 되버린다. 그래서 의미없는 Code Coverage가 나오게된다. 그렇게 하지 않기 위해 테스트 케이스일땐 아무 실행을 하지 않는 MockAppDelegate를 실행하게 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;uiresponder&quot;&gt;UIResponder&lt;/h3&gt;
+
+&lt;p&gt;UIResponder class는 객체(objects)들의 인터페이스를 정의하는데, 어떤 객체냐면 이벤트들에 응답하고 관리가 되어야하는 객체들을 위한 인터페이스를 정의한 클래스이다. 그래서 UIApplication와 UIView는 UIResponder의 subclasses이다! 이러한 클래스들의 객체들은 응답(responder) 객체들로써 혹은 간단하게 responders로써 참조 되어진다. 말그대로 여러가지 이벤트들, 특히 유저들의 터치와 모션 이벤트가 있다. 이러한 이벤트들을 다룰수 있게 인터페이스를 제공해주는 상위 클래스란 뜻이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiresponder&quot;&gt;UIResponder&lt;/a&gt;에서 Responding to Touch Events에 가보면 자세한 메소드들이 나와있다.&lt;/p&gt;
+
+&lt;p&gt;AppDelgate가 UIResponder를 상속한다는건 말그대로 유저들의 액션들을 다룰 수 있는 인터페이스를 갖게 된다는 뜻이된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;uiapplicationdelegate&quot;&gt;UIApplicationDelegate&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/uikit&quot;&gt;App Lifecycle&lt;/a&gt;과 관련된 response를 알려주는 interface 프로토콜이다. 이건 잘들 알고 있으실테니 넘어가겠다.&lt;/p&gt;
+
+&lt;h3 id=&quot;uiwindow&quot;&gt;UIWindow&lt;/h3&gt;
+
+&lt;p&gt;UIWindow없이는 유저가 발생하는 이벤트에 적절한 반응을 하거나 화면에 UI를 보여줄 수가 없다. UIWindow자체는 시각적인 요소를 보여주는걸 자체적으로 가지고 있지는 않는다. 하지만 앱의 View를 보여주는데 결정적인 역할을 할뿐더러 이벤트들을 다룰수 있게 해준다. 그니까 UIWindow 없이 UIView만 딸랑 보여주면 시각적으로 볼수도 없을 뿐더러 유저에 대한 이벤트 터치, 모션을 처리할 수 없다는 뜻. 정작 자신은 시각적 요소를 가지고 있지 않는데 말이다.&lt;/p&gt;
+
+&lt;p&gt;스토리보드 없이 한다면 UIWindow를 코드로 생성해줘야함. 여러 윈도우가 있을 수 있고 발생한 이벤트를 적절한 윈도우를 선택해 처리하게 된다! ← 여러윈도우가 있을 수 있다는건 몰랐던 사실이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+틀린점이나 이상한점이 있다면 제보 감사합니다. :)&lt;/p&gt;
+
+&lt;h1 id=&quot;참고&quot;&gt;참고&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@Dougly/breaking-down-the-appdelegate-swift-3-258e48f907d6&quot;&gt;Breaking Down the AppDelegate (swift 3)&lt;/a&gt;&lt;/p&gt;</content><author><name>Napster</name></author><category term="AppDelegate" /><category term="UIApplication" /><summary type="html">Interfacbuilder없이 앱 제작</summary></entry><entry><title type="html">[OS] 1. 프로세스</title><link href="http://localhost:4000/os/OS-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/" rel="alternate" type="text/html" title="[OS] 1. 프로세스" /><published>2021-05-12T00:00:00+09:00</published><updated>2021-05-12T00:00:00+09:00</updated><id>http://localhost:4000/os/OS%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4</id><content type="html" xml:base="http://localhost:4000/os/OS-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/">&lt;h1 id=&quot;프로세스&quot;&gt;프로세스&lt;/h1&gt;
 &lt;p&gt;Context Switch&lt;/p&gt;
 
 &lt;p&gt;CPU가 이 과정을 진행 중일땐 Over Head라 한다.&lt;/p&gt;

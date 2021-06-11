@@ -41,9 +41,15 @@ var store = [{
         "url": "http://localhost:4000/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/%EC%97%AD%ED%95%A0,-%EC%B1%85%EC%9E%84,-%ED%98%91%EB%A0%A5/",
         "teaser": "http://localhost:4000/assets/images/logo.jpg"
       },{
-        "title": "[OS] 1. 서론, 프로세스",
+        "title": "[OS] 1. 프로세스",
         "excerpt":"프로세스 Context Switch CPU가 이 과정을 진행 중일땐 Over Head라 한다. 보조 기억 장치에 저장되어 있는걸 보통 프로그램이라 한다. 이 프로그램이 OS에 의해서 주 기억장치로 올라오게되면(실행하면) 이때부터 프로세스라 불린다. 프로세스 상태 그림 new ready running waiting terminated 프로세스의 상태의 천이는 해당 프로세스가 CPU에 의해 실행이 되고 있을때 혹은 I/O에 의해서...","categories": ["OS"],
         "tags": ["OS","CS"],
         "url": "http://localhost:4000/os/OS-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/",
+        "teaser": "http://localhost:4000/assets/images/logo.jpg"
+      },{
+        "title": "[iOS] App의 시작점은 어디일까",
+        "excerpt":"Interfacbuilder없이 앱 제작 devxoul/RxTodo 스토리보드 없이 앱을 제작해보려하니 기초지식이 많이 부족했다. 그래서 RxTodo 앱을 베이스로 카피캣으로 기초를 다져볼까한다. AppDelegate 일단 AppDelegate 가 무슨일을 하는지 역활부터 정확히 알아보자. 최상단에 import UIKit이 있다. Apple에서 UIKit은 User Interface와 관련된 일을 하는 framework다. AppDelegate에 이게 선언 되었다는건, 유저인터페이스와 관련된게 필요하다는 뜻일 것이다. main은 무엇을...","categories": ["iOS"],
+        "tags": ["AppDelegate","UIApplication"],
+        "url": "http://localhost:4000/ios/iOS-App%EC%9D%98-%EC%8B%9C%EC%9E%91%EC%A0%90/",
         "teaser": "http://localhost:4000/assets/images/logo.jpg"
       }]
